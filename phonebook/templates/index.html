@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'index.css' %}">
+</head>
+<body>
+    <h1 class="one">Phone Book</h1>
+    <div class="ins">
+    <form action="phonebook" class="insert" method="POST">
+        {% csrf_token %}      
+        <label for="">Name</label>
+        <input type="text" name="name"><br><br>
+        <label for="">Phone</label>
+        <input type="number" name="phone"><br>
+        <input type="submit" name="btn" value="insert" class="btn1">
+        {{key}}   
+    </form>
+    </div>
+   
+
+    <div class="dis">
+    <form action="display">
+        <table border="1">
+            <input type="submit" value="display" class="btn2">
+            <tr>
+                <td>Name</td>
+                <td>Phone</td>
+            </tr>
+            {% for i in phn %}
+            <tr>
+                <td>{{i.name}}</td>
+                <td>{{i.phone}}</td>
+            </tr>
+            {% endfor %}
+        </table><br>
+    </form>
+    </div><br>
+
+    <div class="del">
+    <form action="delete" method="POST" class="delete">
+        {% csrf_token %}
+        Enter Name to Delete
+        <input type="text" name="name"><br>
+        <input type="submit" value="delete" class="btn3">
+        {{key1}}
+    </form>
+    </div>
+    <div class="updt">
+    <form action="update" method="POST" class="up">
+        {% csrf_token %}
+        <label for="">Old Name</label>
+        <input type="text" name="oldname"><br><br>
+        <label for="">New Name</label>
+        <input type="text" name="newname"><br>
+        <input type="submit" value="update" class="btn4"><br>
+    </form>
+    </div>
+</body>
+</html>

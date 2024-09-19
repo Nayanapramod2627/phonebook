@@ -1,0 +1,41 @@
+body{
+    background-color: gray;
+}
+.one{
+    text-align: center;
+}
+.ins{
+    background-color: blueviolet;
+    width: 30%;
+    height: 130px;
+}
+.insert{
+    padding: 30px;
+}
+.del{
+    background-color: red;
+    width: 30%;
+    margin-left: 70%;
+    height: 130px;
+    margin-top: -370px;
+    padding: 30px;
+
+}
+.dis{
+    background-color: brown;
+    width: 30%;
+    margin-top: 30px;
+    height: 130px; 
+    padding: 30px;
+
+
+}
+.updt{
+    background-color: mediumspringgreen;
+    width: 30%;
+    height: 130px;
+    margin-left: 945px;
+    margin-top: 40px;
+    padding: 20px;
+
+}
